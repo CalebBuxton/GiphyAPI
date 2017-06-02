@@ -50,13 +50,13 @@ function callAPI(term) {
 		dataType: 'json'
 	})
 	.done(function(response){
-		for (var i = 0; i < response.data.length; i++) {
-			$("#gifs").append("<div class = 'result'><img id = '" + i + "' class = 'preview' src='" + response.data[i]['images']['fixed_height_still']['url'] + "'><br><h3 class='rating'>Rating: " + response.data[i]['rating'] + "</h3</div>")
+		for (var i = 0; i < response.data.length; i++) {			
 			stills.push(response.data[i]['images']['fixed_height_still']['url'])
 			animated.push(response.data[i]['images']['fixed_height']['url'])
+			$("#gifs").append("<div class = 'result'><img id = '" + i + "' class = 'preview' src='" + stills[i] + "'><br><h3 class='rating'>Rating: " + response.data[i]['rating'] + "</h3</div>")
+
 		}
 	})
 
 }
-
 
