@@ -22,6 +22,16 @@ $("input[type='text']").keypress(function(event){
 
 $("button[id='submit']").on("click", addItem)
 
+$("#gifs").on("click", "img", function(){
+	var i = $(this).attr("id");
+	if ($(this).attr("src") === stills[i]) {
+		$(this).attr("src", animated[i]);
+	}
+	else {
+		$(this).attr("src", stills[i]);
+	}
+})
+
 
 function addItem() {
 	if ($("input[type='text']").val()) {
@@ -40,30 +50,13 @@ function callAPI(term) {
 		dataType: 'json'
 	})
 	.done(function(response){
-		// console.log(JSON.stringify(response))
 		for (var i = 0; i < response.data.length; i++) {
-			// console.log(response.data[i])
-			// console.log(response.data[i]['images']['original_still']['url']);
 			$("#gifs").append("<div class = 'result'><img id = '" + i + "' class = 'preview' src='" + response.data[i]['images']['fixed_height_still']['url'] + "'><br><h3 class='rating'>Rating: " + response.data[i]['rating'] + "</h3</div>")
 			stills.push(response.data[i]['images']['fixed_height_still']['url'])
 			animated.push(response.data[i]['images']['fixed_height']['url'])
-
 		}
-		console.log($(".preview"))
-		console.log(response)
-
 	})
 
 }
-
-$("#gifs").on("click", "img", function(){
-	var i = $(this).attr("id");
-	if ($(this).attr("src") === stills[i]) {
-		$(this).attr("src", animated[i]);
-	}
-	else {
-		$(this).attr("src", stills[i]);
-	}
-})
 
 
