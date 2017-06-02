@@ -1,0 +1,80 @@
+html {
+	background: #e6e6e6;
+}
+body {
+	margin: 0 auto;
+	height: 100%;
+	width: 80%;
+	padding: 0 20px;
+	display: block;
+	font-family: 'Roboto';
+}
+.name {
+	background: #338fcc;
+	padding: 5px;
+	border: 2px solid #194967;
+	margin: 10px;
+	text-transform: uppercase;
+	border-radius: 8px;
+	width: 200px;
+	text-decoration: none;
+	box-shadow: 0 0px 4px 0 rgba(0,0,0,0.2), 0 4px 8px 0 rgba(0,0,0,0.19);
+	font-family: 'Roboto';
+}
+
+.name:hover {
+	background: #194967;
+	border: 2px solid white;
+	color: white;
+}
+
+#container {
+	display: inline-block;
+	width: 100%;
+}
+
+#gifs {
+	width: 75%;
+	display: inline-block;
+	float: left;
+}
+
+#form {
+	display: inline;
+	float: right;
+	width: 20%;
+}
+
+input {
+	width: 60%;
+	padding: 5px;
+	height: 20px;
+}
+
+#submit {
+	background: #194967;
+	border: 2px solid white;
+	border-radius: 8px;
+	padding: 10px;
+	width: 30%;
+	text-decoration: none;
+	color: white;
+}
+
+.preview {
+	width: 260px;
+	height: 200px;
+	margin: 10px;
+	display: inline;
+}
+
+.result {
+	display: inline-block;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.rating {
+	text-transform: uppercase;
+	margin: 0;
+}
